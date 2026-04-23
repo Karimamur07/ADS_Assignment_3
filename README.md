@@ -6,7 +6,9 @@ A. Project Overview
 
 This project implements and compares three algorithms:
 -Insertion Sort (Basic Sorting  O(n²))
+
 -Quick Sort (Advanced Sorting O(n log n))  
+
 -Binary Search (Searching O(log n))
 
 Purpose of the Experiment:
