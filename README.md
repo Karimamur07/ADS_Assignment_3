@@ -1,4 +1,4 @@
-Name: Aruzhan Rsaliyeva
+Name: Karima Mursalimova
 
 Group: IT-2502
 
@@ -63,7 +63,8 @@ C. Experimental Results
 | 10000 | Sorted | 3,021,100 ns | 381,674,800 ns | 4,400 ns |
 
 D. Analysis Questions
- 1. Which sorting algorithm performed faster? Why?
+
+1. Which sorting algorithm performed faster? Why?
 
 Quick Sort is significantly faster for large random datasets (1.58ms vs 122.9ms at size 10000).
 
@@ -75,7 +76,7 @@ Why?
  
  For n=10000: n log n ≈ 132,877 operations vs n² = 100,000,000 operations
 
- 2. How does performance change with input size?
+2. How does performance change with input size?
 
 | Size Increase | Insertion Sort | Quick Sort |
 |---------------|----------------|------------|
@@ -85,7 +86,7 @@ Why?
 
 Observation: Insertion Sort grows quadratically. Doubling input size roughly quadruples execution time.
 
- 3. How does sorted vs unsorted data affect performance?
+3. How does sorted vs unsorted data affect performance?
 
 | Algorithm | Random Data (10k) | Sorted Data (10k) | Ratio |
 |-----------|-------------------|-------------------|-------|
@@ -98,7 +99,7 @@ Insertion Sort achieves O(n) best case on already sorted data
 
 Quick Sort experiences worst-case O(n²) when pivot is always the largest element (my implementation picks last element as pivot)
 
- 4. Do the results match expected Big-O complexity?
+4. Do the results match expected Big-O complexity?
 
 YES, strongly matches:
 
@@ -110,7 +111,7 @@ YES, strongly matches:
 | Quick Sort (sorted data) | O(n²) worst case | 0.01ms → 1.30ms → 381.68ms |  Shows quadratic degradation |
 | Binary Search | O(log n) | 2,100ns → 3,300ns → 11,100ns | Logarithmic (minimal growth) |
 
- 5. Which searching algorithm is more efficient? Why?
+5. Which searching algorithm is more efficient? Why?
 
 Binary Search (O(log n)) is dramatically more efficient than Linear Search (O(n)).
 
@@ -122,7 +123,7 @@ Comparison for 10,000 elements:
 
 Binary Search is ~9x faster despite the sorting overhead.
 
- 6. Why does Binary Search require a sorted array?
+6. Why does Binary Search require a sorted array?
 
 Binary Search relies on the **ordered property** of the array to eliminate half of the remaining elements at each step:
 
