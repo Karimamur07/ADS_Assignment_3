@@ -5,16 +5,16 @@ Group: IT-2502
 A. Project Overview
 
 This project implements and compares three algorithms:
-Insertion Sort (Basic Sorting  O(n²))
-Quick Sort (Advanced Sorting O(n log n))  
-Binary Search (Searching O(log n))
+-Insertion Sort (Basic Sorting  O(n²))
+-Quick Sort (Advanced Sorting O(n log n))  
+-Binary Search (Searching O(log n))
 
 Purpose of the Experiment:
 
-Measure and compare algorithm performance on different input sizes
-Analyze how input type (random vs sorted) affects execution time
-Verify theoretical Big-O complexity with actual measurements
-Understand practical implications of algorithm selectionPurpose of the Experiment:
+-Measure and compare algorithm performance on different input sizes
+-Analyze how input type (random vs sorted) affects execution time
+-Verify theoretical Big-O complexity with actual measurements
+-Understand practical implications of algorithm selectionPurpose of the Experiment:
 
 B. Algorithm Descriptions
  
