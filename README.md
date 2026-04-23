@@ -33,10 +33,6 @@ Repeatedly divides sorted array in half to find target value.
 - Time complexity: O(log n)
 - Requirement: Array MUST be sorted
 
-
-<img width="588" height="198" alt="image" src="https://github.com/user-attachments/assets/3152893f-aba1-4332-9b05-ddad8b9a2eea" />
-
-
 C. Experimental Results
 
 
@@ -116,18 +112,37 @@ Without sorting, we cannot guarantee which half contains the target, making Bina
 E. Screenshots
 
 Program Output - Performance Results (Size 10)
-<img width="577" height="252" alt="image" src="https://github.com/user-attachments/assets/070dd0e2-b99b-4308-ba33-0cb902aa98f6" />
-
-Program Output - Performance Results (Size 100)
 <img width="589" height="310" alt="image" src="https://github.com/user-attachments/assets/2476ab3c-589e-4136-8bfe-289e81378f69" />
 
-Program Output - Performance Results (Size 1000)
+Program Output - Performance Results (Size 100)
 <img width="589" height="307" alt="image" src="https://github.com/user-attachments/assets/9ed4a774-1dd4-4cf7-9330-6482a34e50e0" />
 
-Program Output - Performance Results (Size 10000)
+Program Output - Performance Results (Size 1000)
 <img width="589" height="311" alt="image" src="https://github.com/user-attachments/assets/6c7624fe-11e0-41ad-9af7-8b6a289ef940" />
 
 Program Output - Performance Results (Size 10000)
 <img width="582" height="296" alt="image" src="https://github.com/user-attachments/assets/45de0ed4-5d9c-4234-98ce-fb2d6a323d85" />
+
+F. Reflection Section
+
+### What I learned about algorithm efficiency
+
+This experiment provided invaluable hands-on experience with the practical implications of Big-O complexity. The most striking lesson was seeing **theory become reality** - Insertion Sort's O(n²) growth became painfully obvious at 10,000 elements (122ms) compared to Quick Sort's graceful O(n log n) scaling (1.6ms). However, the surprise came with sorted data: Quick Sort, typically considered "fast," degraded to 382ms - 240 times slower than on random data! This happened because my implementation always picks the last element as pivot, creating the worst-case scenario on already-sorted arrays. Meanwhile, Insertion Sort shone brilliantly, completing in just 3ms due to its O(n) best case.
+
+### Differences between theoretical and practical performance
+
+While Big-O notation predicts growth rates, actual performance includes important **constants and overhead**. For small arrays (n=10), Insertion Sort sometimes outperformed Quick Sort despite worse Big-O - Quick Sort's recursive overhead dominates at tiny sizes. I also learned that **pivot selection strategy is critical** for Quick Sort's real-world performance. A simple improvement like random pivot selection would eliminate the sorted-data bottleneck. Binary Search consistently delivered O(log n) efficiency, completing searches in under 0.011ms even at 10,000 elements - a powerful demonstration of logarithmic efficiency.
+
+### Challenges faced during implementation
+
+The main challenge was ensuring **fair performance comparisons** - each algorithm needed identical input data, so I implemented careful array copying before each test. Using System.nanoTime() required understanding Java's timing precision and ensuring measurements focused only on algorithm execution, not array copying overhead. Another challenge was choosing appropriate array sizes - too small (like 10 elements) produced noisy timing results, while too large caused excessive wait times during testing. Finally, interpreting the results required connecting observed behavior back to theoretical concepts, which deepened my understanding of algorithm analysis.
+
+### Key Takeaways
+
+1. **No single "best" algorithm** - Quick Sort excels on random data, Insertion Sort on nearly-sorted data
+2. **Always consider input characteristics** when choosing algorithms
+3. **Theoretical complexity matters most for large inputs** (n > 1000)
+4. **Constants and overhead dominate at small scales**
+5. **Understanding worst-case scenarios** is as important as knowing average performance
 
 
