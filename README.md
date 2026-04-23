@@ -63,18 +63,19 @@ C. Experimental Results
 | 10000 | Sorted | 3,021,100 ns | 381,674,800 ns | 4,400 ns |
 
 D. Analysis Questions
-### 1. Which sorting algorithm performed faster? Why?
+ 1. Which sorting algorithm performed faster? Why?
 
 Quick Sort is significantly faster for large random datasets (1.58ms vs 122.9ms at size 10000).
 
 Why?
+
  Quick Sort has average time complexity of O(n log n)
  
  Insertion Sort has O(n²) complexity
  
  For n=10000: n log n ≈ 132,877 operations vs n² = 100,000,000 operations
 
-### 2. How does performance change with input size?
+ 2. How does performance change with input size?
 
 | Size Increase | Insertion Sort | Quick Sort |
 |---------------|----------------|------------|
@@ -84,7 +85,7 @@ Why?
 
 Observation: Insertion Sort grows quadratically. Doubling input size roughly quadruples execution time.
 
-### 3. How does sorted vs unsorted data affect performance?
+ 3. How does sorted vs unsorted data affect performance?
 
 | Algorithm | Random Data (10k) | Sorted Data (10k) | Ratio |
 |-----------|-------------------|-------------------|-------|
@@ -97,7 +98,7 @@ Insertion Sort achieves O(n) best case on already sorted data
 
 Quick Sort experiences worst-case O(n²) when pivot is always the largest element (my implementation picks last element as pivot)
 
-### 4. Do the results match expected Big-O complexity?
+ 4. Do the results match expected Big-O complexity?
 
 YES, strongly matches:
 
@@ -109,7 +110,7 @@ YES, strongly matches:
 | Quick Sort (sorted data) | O(n²) worst case | 0.01ms → 1.30ms → 381.68ms |  Shows quadratic degradation |
 | Binary Search | O(log n) | 2,100ns → 3,300ns → 11,100ns | Logarithmic (minimal growth) |
 
-### 5. Which searching algorithm is more efficient? Why?
+ 5. Which searching algorithm is more efficient? Why?
 
 Binary Search (O(log n)) is dramatically more efficient than Linear Search (O(n)).
 
@@ -121,7 +122,7 @@ Comparison for 10,000 elements:
 
 Binary Search is ~9x faster despite the sorting overhead.
 
-### 6. Why does Binary Search require a sorted array?
+ 6. Why does Binary Search require a sorted array?
 
 Binary Search relies on the **ordered property** of the array to eliminate half of the remaining elements at each step:
 
@@ -166,10 +167,14 @@ Challenges faced during implementation
 The main challenge was ensuring fair performance comparisons - each algorithm needed identical input data, so I implemented careful array copying before each test. Using System.nanoTime() required understanding Java's timing precision and ensuring measurements focused only on algorithm execution, not array copying overhead. Another challenge was choosing appropriate array sizes - too small (like 10 elements) produced noisy timing results, while too large caused excessive wait times during testing. Finally, interpreting the results required connecting observed behavior back to theoretical concepts, which deepened my understanding of algorithm analysis.
 
 Key Takeaways
-1. **No single "best" algorithm** - Quick Sort excels on random data, Insertion Sort on nearly-sorted data
-2. **Always consider input characteristics** when choosing algorithms
-3. **Theoretical complexity matters most for large inputs** (n > 1000)
-4. **Constants and overhead dominate at small scales**
-5. **Understanding worst-case scenarios** is as important as knowing average performance
+1. No single "best" algorithm - Quick Sort excels on random data, Insertion Sort on nearly-sorted data
+
+2. Always consider input characteristics** when choosing algorithms
+
+3. Theoretical complexity matters most for large inputs (n > 1000)
+
+4. Constants and overhead dominate at small scales
+
+5. Understanding worst-case scenarios is as important as knowing average performance
 
 
