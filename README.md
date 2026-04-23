@@ -5,6 +5,7 @@ Group: IT-2502
 A. Project Overview
 
 This project implements and compares three algorithms:
+
 -Insertion Sort (Basic Sorting  O(n²))
 
 -Quick Sort (Advanced Sorting O(n log n))  
@@ -14,21 +15,24 @@ This project implements and compares three algorithms:
 Purpose of the Experiment:
 
 -Measure and compare algorithm performance on different input sizes
+
 -Analyze how input type (random vs sorted) affects execution time
+
 -Verify theoretical Big-O complexity with actual measurements
--Understand practical implications of algorithm selectionPurpose of the Experiment:
+
+-Understand practical implications of algorithm selection
 
 B. Algorithm Descriptions
  
 Insertion Sort
 Builds final sorted array one element at a time. For each element, it shifts larger elements to the right.
-Best case: O(n) - already sorted
-Worst case: O(n²) - reverse sorted
+-Best case: O(n) - already sorted
+-Worst case: O(n²) - reverse sorted
 
 Quick Sort
 Uses divide-and-conquer: picks a pivot, partitions array around it, recursively sorts sub-arrays.
- Average case: O(n log n)
-Worst case: O(n²) - when pivot is always min/max
+-Average case: - O(n log n)
+-Worst case: O(n²) - when pivot is always min/max
 
 Binary Search
 Repeatedly divides sorted array in half to find target value.
