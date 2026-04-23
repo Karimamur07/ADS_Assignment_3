@@ -26,17 +26,23 @@ B. Algorithm Descriptions
  
 Insertion Sort
 Builds final sorted array one element at a time. For each element, it shifts larger elements to the right.
+
 -Best case: O(n) - already sorted
+
 -Worst case: O(n²) - reverse sorted
 
 Quick Sort
 Uses divide-and-conquer: picks a pivot, partitions array around it, recursively sorts sub-arrays.
+
 -Average case: - O(n log n)
+
 -Worst case: O(n²) - when pivot is always min/max
 
 Binary Search
 Repeatedly divides sorted array in half to find target value.
+
 Time complexity: O(log n)
+
 Requirement: Array MUST be sorted
 
 C. Experimental Results
@@ -60,7 +66,9 @@ Quick Sort is significantly faster for large random datasets (1.58ms vs 122.9ms 
 
 Why?
  Quick Sort has average time complexity of O(n log n)
+ 
  Insertion Sort has O(n²) complexity
+ 
  For n=10000: n log n ≈ 132,877 operations vs n² = 100,000,000 operations
 
 ### 2. How does performance change with input size?
@@ -81,7 +89,9 @@ Observation: Insertion Sort grows quadratically. Doubling input size roughly qua
 | Quick Sort | 1.58 ms | 381.68 ms | 240x SLOWER on sorted |
 
 Explanation:
+
 Insertion Sort achieves O(n) best case on already sorted data
+
 Quick Sort experiences worst-case O(n²) when pivot is always the largest element (my implementation picks last element as pivot)
 
 ### 4. Do the results match expected Big-O complexity?
@@ -101,18 +111,27 @@ YES, strongly matches:
 Binary Search (O(log n)) is dramatically more efficient than Linear Search (O(n)).
 
 Comparison for 10,000 elements:
+
 - Binary Search: ~11,100 ns (≈14 comparisons)
+
 - Linear Search (theoretical): ~100,000 ns (≈5,000 comparisons average)
 
 Binary Search is ~9x faster despite the sorting overhead.
 
 ### 6. Why does Binary Search require a sorted array?
+
 Binary Search relies on the **ordered property** of the array to eliminate half of the remaining elements at each step:
+
 If array is sorted [1, 3, 5, 7, 9] and target = 7:
+
 Middle = 5 → 7 > 5 → search RIGHT half [7, 9]
+
 This logic ONLY works if array is sorted!
+
 If array is unsorted [9, 1, 7, 5, 3]:
+
 Middle = 7 → target 5 is on both sides → cannot decide
+
 Without sorting, we cannot guarantee which half contains the target, making Binary Search impossible.
 
 E. Screenshots
@@ -144,11 +163,10 @@ Challenges faced during implementation
 The main challenge was ensuring fair performance comparisons - each algorithm needed identical input data, so I implemented careful array copying before each test. Using System.nanoTime() required understanding Java's timing precision and ensuring measurements focused only on algorithm execution, not array copying overhead. Another challenge was choosing appropriate array sizes - too small (like 10 elements) produced noisy timing results, while too large caused excessive wait times during testing. Finally, interpreting the results required connecting observed behavior back to theoretical concepts, which deepened my understanding of algorithm analysis.
 
 Key Takeaways
-
-1. No single "best" algorithm - Quick Sort excels on random data, Insertion Sort on nearly-sorted data
-2. Always consider input characteristics when choosing algorithms
-3. Theoretical complexity matters most for large inputs (n > 1000)
-4. Constants and overhead dominate at small scales
-5. Understanding worst-case scenarios is as important as knowing average performance
+1. **No single "best" algorithm** - Quick Sort excels on random data, Insertion Sort on nearly-sorted data
+2. **Always consider input characteristics** when choosing algorithms
+3. **Theoretical complexity matters most for large inputs** (n > 1000)
+4. **Constants and overhead dominate at small scales**
+5. **Understanding worst-case scenarios** is as important as knowing average performance
 
 
