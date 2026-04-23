@@ -25,6 +25,7 @@ Purpose of the Experiment:
 B. Algorithm Descriptions
  
 Insertion Sort
+
 Builds final sorted array one element at a time. For each element, it shifts larger elements to the right.
 
 -Best case: O(n) - already sorted
@@ -32,6 +33,7 @@ Builds final sorted array one element at a time. For each element, it shifts lar
 -Worst case: O(n²) - reverse sorted
 
 Quick Sort
+
 Uses divide-and-conquer: picks a pivot, partitions array around it, recursively sorts sub-arrays.
 
 -Average case: - O(n log n)
@@ -39,6 +41,7 @@ Uses divide-and-conquer: picks a pivot, partitions array around it, recursively 
 -Worst case: O(n²) - when pivot is always min/max
 
 Binary Search
+
 Repeatedly divides sorted array in half to find target value.
 
 Time complexity: O(log n)
