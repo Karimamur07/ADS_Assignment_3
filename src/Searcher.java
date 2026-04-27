@@ -1,7 +1,7 @@
 public class Searcher {
 
-    // Binary Search - O(log n) time complexity
-    // Requires sorted array as input
+    // Binary Search - O(log n)
+
     public int search(int[] arr, int target) {
         int left = 0;
         int right = arr.length - 1;
@@ -17,6 +17,6 @@ public class Searcher {
                 right = mid - 1;
             }
         }
-        return -1; // Target not found
+        return -1;
     }
 }

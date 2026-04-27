@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class Sorter {
 
-    // Insertion Sort - O(n²) time complexity
+    // Insertion Sort - O(n²)
     public void basicSort(int[] arr) {
         int n = arr.length;
         for (int i = 1; i < n; i++) {
@@ -17,7 +17,7 @@ public class Sorter {
         }
     }
 
-    // Quick Sort - O(n log n) average time complexity
+    // Quick Sort - O(n log n)
     public void advancedSort(int[] arr) {
         quickSort(arr, 0, arr.length - 1);
     }
@@ -50,7 +50,7 @@ public class Sorter {
         arr[j] = temp;
     }
 
-    // Generate random array of given size
+
     public int[] generateRandomArray(int size) {
         Random rand = new Random();
         int[] arr = new int[size];
@@ -60,7 +60,7 @@ public class Sorter {
         return arr;
     }
 
-    // Generate sorted array (ascending)
+
     public int[] generateSortedArray(int size) {
         int[] arr = new int[size];
         for (int i = 0; i < size; i++) {
@@ -69,14 +69,14 @@ public class Sorter {
         return arr;
     }
 
-    // Create a deep copy of array
+
     public int[] copyArray(int[] arr) {
         int[] copy = new int[arr.length];
         System.arraycopy(arr, 0, copy, 0, arr.length);
         return copy;
     }
 
-    // Print first 20 elements of array
+
     public void printArray(int[] arr) {
         System.out.print("[");
         for (int i = 0; i < Math.min(arr.length, 20); i++) {
